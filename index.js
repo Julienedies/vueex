@@ -3,17 +3,14 @@
  * Created by j on 2019-01-11.
  */
 
-import popup from './src/popup/popup'
-import modal from './src/modal/modal.vue'
-import dragResizeBar from './src/drag-resize-bar/index.vue'
+import popup from './src/components/popup/popup.vue'
+import dragResizeBar from './src/components/drag-resize-bar/index.vue'
 
-import func from './src/func'
-
+import func from './src/util/index.js'
 
 const components = {
     dragResizeBar,
-    popup,
-    modal
+    popup
 }
 
 const install = function (Vue, opts = {}) {
@@ -45,6 +42,5 @@ const API = {
 export default API
 
 export {
-    modal,
     popup
 }

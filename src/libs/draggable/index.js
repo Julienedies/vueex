@@ -11,7 +11,7 @@ export default class Draggable {
      * @param callback {Function} callback on dragging
      */
     constructor (dom, callback) {
-        if (!this instanceof Draggable) return new Draggable(dom, callback)
+        if (!(this instanceof Draggable)) return new Draggable(dom, callback)
         this.dom = dom
         this.callback = callback
         this.startX = 0

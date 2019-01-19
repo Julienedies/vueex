@@ -1,0 +1,29 @@
+{
+  "name": "vueex",
+  "version": "0.1.1",
+  "description": "vue extension.",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/julienedies/vueex.git"
+  },
+  "keywords": [
+    "vue",
+    "vue",
+    "ui",
+    "components",
+    "frontend",
+    "js",
+    "vue",
+    "extension"
+  ],
+  "author": "julienedies",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/julienedies/vueex/issues"
+  },
+  "homepage": "https://github.com/julienedies/vueex#readme"
+}

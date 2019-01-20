@@ -4,11 +4,13 @@
  */
 
 import popup from './src/components/popup/popup.vue'
+import contextmenu from './src/components/contextmenu/contextmenu.vue'
 import dragResizeBar from './src/components/drag-resize-bar/index.vue'
 
 import func from './src/util/index.js'
 
 const components = {
+    contextmenu,
     dragResizeBar,
     popup
 }

@@ -1,6 +1,6 @@
 /*!
  * Making draggable objects
- * Created by j on 2019-0-15.
+ * Created by j on 2019-01-15.
  */
 
 export default class Draggable {

@@ -1,7 +1,6 @@
 <template>
     <div class="vueex-contextmenu" v-if="ev" :style="style">
         <slot>
-
         </slot>
     </div>
 </template>
@@ -14,15 +13,10 @@
         },
         data () {
             return {
-                ev: false,
+                ev: false,  // contextmenu event
                 visible: false,
-                style: {}
+                style: {}  // 元素位置
             }
-        },
-        updated () {
-            console.log('--------- updated', this.$el )
-        },
-        computed: {
         },
         methods: {
             _style () {
@@ -43,8 +37,6 @@
                 let vh = window.innerHeight
                 let ew = this.$el.offsetWidth
                 let eh = this.$el.offsetHeight
-                //console.log(55555, cx, ew, vw, cx + ew - vw)
-                //console.log(66666, cy, eh, vh, cy + eh - vh)
                 if (cx + ew - vw > 0) {
                     x = cx - (cx + ew - vw) - gap;
                 }

@@ -15,7 +15,7 @@
             return {
                 ev: false,  // contextmenu event
                 visible: false,
-                style: {}  // 元素位置
+                style: {}  // dom element position
             }
         },
         methods: {
@@ -50,9 +50,6 @@
                 this.visible = false;
                 this.style = {}
                 this.$emit('input', false)
-            },
-            onBlur(){
-                this.cancelContextmenu()
             }
         },
         watch: {
@@ -68,7 +65,7 @@
                 } else {
                     document.removeEventListener('click', this.cancelContextmenu, false)
                     document.removeEventListener('contextmenu', this.cancelContextmenu, false)
-                    document.addEventListener('scroll', this.cancelContextmenu, true)
+                    document.removeEventListener('scroll', this.cancelContextmenu, true)
                 }
             }
         }
@@ -77,17 +74,17 @@
 
 <style lang="scss" scoped>
     .vueex-contextmenu {
-        display: flex;
-        transform: translate(-10000px, 0);
-        padding: 0.5rem 0;
         position: fixed;
         z-index: 10001;
         top: 0;
         left: 0;
+        display: flex;
+        padding: 0.5rem 0;
         background: #fff;
-        box-shadow: #9f9f9f 3px 3px 10px;
-        border-radius: 0.25rem;
         min-height: 75px;
         min-width: 3em;
+        box-shadow: #9f9f9f 3px 3px 10px;
+        border-radius: 0.25rem;
+        transform: translate(-10000px, 0);
     }
 </style>

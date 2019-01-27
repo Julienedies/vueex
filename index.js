@@ -7,7 +7,14 @@ import popup from './src/components/popup/popup.vue'
 import contextmenu from './src/components/contextmenu/contextmenu.vue'
 import dragResizeBar from './src/components/drag-resize-bar/index.vue'
 
-import func from './src/util/index.js'
+import $msg from './src/components/message/index'
+
+import util from './src/util/index.js'
+
+const func = {
+    ...util,
+    $msg
+}
 
 const components = {
     contextmenu,
@@ -24,7 +31,7 @@ const install = function (Vue, opts = {}) {
         name = alias || name
         if (Vue.prototype[name]) {
             throw new Error(`命名冲突, Vue.prototype.${ name }已经存在, 可以通过options.alias.${ name }={rename}重新命名.`)
-        }else{
+        } else {
             Vue.prototype[name] = fn
         }
     })

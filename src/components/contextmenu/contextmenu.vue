@@ -45,7 +45,8 @@
                 }
                 return {left: `${ x }px`, top: `${ y }px`}
             },
-            cancelContextmenu () {
+            cancelContextmenu (e) {
+                console.info('cancelContextmenu', e)
                 this.ev = false
                 this.visible = false;
                 this.style = {}
@@ -59,13 +60,13 @@
                     this.$nextTick(() => {
                         this.style = this._style()
                     })
-                    document.addEventListener('scroll', this.cancelContextmenu, true)
                     document.addEventListener('click', this.cancelContextmenu, false)
-                    document.addEventListener('contextmenu', this.cancelContextmenu, false)
+                    document.addEventListener('scroll', this.cancelContextmenu, true)
+                    document.addEventListener('contextmenu', this.cancelContextmenu, true)
                 } else {
                     document.removeEventListener('click', this.cancelContextmenu, false)
-                    document.removeEventListener('contextmenu', this.cancelContextmenu, false)
                     document.removeEventListener('scroll', this.cancelContextmenu, true)
+                    document.removeEventListener('contextmenu', this.cancelContextmenu, true)
                 }
             }
         }
